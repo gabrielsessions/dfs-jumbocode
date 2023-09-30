@@ -1,33 +1,33 @@
 import Card from '@/components/Card'
-import { Tab } from '@headlessui/react'
+import Navbar from '@/components/Navbar'
 import Link from 'next/link'
-import { FC, ReactNode } from 'react'
+import { FC, ReactElement, ReactNode } from 'react'
 
 interface CardContentInterface {
   title: string,
   body: ReactNode
 }
 
-function generateBullets(meetings: Array<{ title: ReactNode, bullets: Array<ReactNode> }>): FC<> {
+export function generateBullets(meetings: Array<{ title: ReactNode, bullets?: Array<ReactNode> }>): ReactElement {
   return (
     <>
       <ol className='ml-6 list-decimal'>
         {
           meetings ?
-          meetings.map((meeting, index) => {
-            return (
-              <li key={index} className='my-2'>
-                {meeting.title}
-                <ul className='list-disc mx-2'>
-                  { meeting.bullets ? 
-                  meeting.bullets.map((bullet, bulletIndex) =>
-                    <li className='list-item' key={bulletIndex}>{bullet}</li>
-                  ) : <></> }
-                </ul>
-              </li>
-            )
-          }) : <></>
-      }
+            meetings.map((meeting, index) => {
+              return (
+                <li key={index} className='my-2'>
+                  {meeting.title}
+                  <ul className='list-disc mx-2'>
+                    {meeting.bullets ?
+                      meeting.bullets.map((bullet, bulletIndex) =>
+                        <li className='list-item' key={bulletIndex}>{bullet}</li>
+                      ) : <></>}
+                  </ul>
+                </li>
+              )
+            }) : <></>
+        }
       </ol>
     </>
   )
@@ -47,7 +47,7 @@ const cards: Array<CardContentInterface> = [
               bullets: ["Ask us for the link"]
             },
             {
-              title: <a target="_blank" rel='noreferrer' className='text-blue-500 hover:underline hover:text-blue-700' href="https://docs.google.com/forms/d/e/1FAIpQLScxjWXdF0t8i9lwwsY93gNVV_OcVtH271skSYXQyqRYwSGDRg/viewform">{'Fill out the "Getting to Know You"s survey.'}</a>
+              title: <a target="_blank" rel='noreferrer' className='text-blue-500 hover:underline hover:text-blue-700' href="https://docs.google.com/forms/d/e/1FAIpQLScxjWXdF0t8i9lwwsY93gNVV_OcVtH271skSYXQyqRYwSGDRg/viewform">{'Fill out the "Getting to Know You" survey.'}</a>
             },
             {
               title: <p><span className='italic'>Optional: </span> Check out our <Link className='text-blue-500 hover:underline hover:text-blue-700' href="/webdev101">Web Dev 101 resources</Link></p>
@@ -55,7 +55,7 @@ const cards: Array<CardContentInterface> = [
           ])
         }
         <p className='my-2 mt-4 underline text-lg'>Upcoming Meetings & Workshops</p>
-        { generateBullets([
+        {generateBullets([
           {
             title: "Sunday October 1st (7:00 - 8:00PM): First Hack Night!",
             bullets: ["JCC Room 170"]
@@ -85,9 +85,9 @@ const cards: Array<CardContentInterface> = [
               "Option 2: Thursday, October 19th from 7:30pm - 8:30pm in SEC 253"
             ]
           }
-        ]) }
+        ])}
 
-       
+
       </>
   }
 ]
@@ -96,15 +96,15 @@ const cards: Array<CardContentInterface> = [
 export default function Home() {
   return (
     <>
-      <div className='text-center font-semibold my-4 mx-1'>
-        <h1 className='text-3xl md:text-5xl my-4'>Welcome to JumboCode!</h1>
-        <h2 className='text-2xl my-4'>Team: Dress for Success</h2>
+      <Navbar activeTab='Home' />
+      <div className='text-center font-semibold mb-4 mx-2'>
+        <h1 className='text-3xl md:text-5xl my-2'>Welcome to JumboCode!</h1>
+        <h2 className='text-2xl my-4'>Dress for Success</h2>
         <p className='font-normal'>{"We'll be keeping track of some of our progress here!"}</p>
       </div>
 
       {
         cards.map((card, index) => {
-          console.log(card.content);
           return (
             <div key={index}>
               <Card title={card.title} body={card.body} />
