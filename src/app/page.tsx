@@ -1,13 +1,12 @@
 import Card from '@/components/Card'
 import Navbar from '@/components/Navbar'
 import Link from 'next/link'
-import { FC, ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
-interface CardContentInterface {
-  title: string,
-  body: ReactNode
-}
-
+/**
+ * generateBullets - generates an ordered bullet point list with an optional sublist or unordered elements
+ * @param meetings - An array of objects that contain a title component and an array of sub-bullets which are also components
+ */
 export function generateBullets(meetings: Array<{ title: ReactNode, bullets?: Array<ReactNode> }>): ReactElement {
   return (
     <>
@@ -33,6 +32,12 @@ export function generateBullets(meetings: Array<{ title: ReactNode, bullets?: Ar
   )
 }
 
+interface CardContentInterface {
+    title: string,
+    body: ReactNode
+}
+
+// Array of cards to display on the homepage
 const cards: Array<CardContentInterface> = [
   {
     title: "Week of 10/1: Onboarding (Part 1)",
@@ -93,14 +98,18 @@ const cards: Array<CardContentInterface> = [
 ]
 
 
+/**
+ * Home - generates the homepage, a list of Cards which provide an overview of the current/previous weeks
+ * @constructor
+ */
 export default function Home() {
   return (
     <>
       <Navbar activeTab='Home' />
       <div className='text-center font-semibold mb-4 mx-2'>
-        <h1 className='text-3xl md:text-5xl my-2'>Welcome to JumboCode!</h1>
-        <h2 className='text-2xl my-4'>Dress for Success</h2>
-        <p className='font-normal'>{"We'll be keeping track of some of our progress here!"}</p>
+        <h1 className='text-3xl md:text-5xl my-4'>Welcome to JumboCode!</h1>
+        <h2 className='text-2xl my-6'>Dress for Success</h2>
+        <p className='font-normal my-4'>{"We'll be keeping track of some of our progress here!"}</p>
       </div>
 
       {
