@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Card from "@/components/Card";
 import { generateBullets } from "../page";
-import Link from "next/link";
 
 /**
  * About - Generates a page outlining some general information about the project
