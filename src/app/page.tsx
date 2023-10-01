@@ -1,7 +1,7 @@
 import Card from '@/components/Card'
 import Navbar from '@/components/Navbar'
 import Link from 'next/link'
-import { ReactElement, ReactNode } from 'react'
+import {ReactElement, ReactNode} from 'react'
 
 /**
  * generateBullets - generates an ordered bullet point list with an optional sublist or unordered elements
@@ -33,11 +33,12 @@ export function generateBullets(meetings: Array<{ title: ReactNode, bullets?: Ar
 }
 
 interface CardContentInterface {
-    title: string,
-    body: ReactNode
+  title: string,
+  body: ReactNode
 }
 
 // Array of cards to display on the homepage
+// noinspection HtmlUnknownTarget
 const cards: Array<CardContentInterface> = [
   {
     title: "Week of 10/1: Onboarding (Part 1)",
@@ -52,11 +53,26 @@ const cards: Array<CardContentInterface> = [
               bullets: ["Ask us for the link"]
             },
             {
-              title: <a target="_blank" rel='noreferrer' className='text-blue-500 hover:underline hover:text-blue-700' href="https://docs.google.com/forms/d/e/1FAIpQLScxjWXdF0t8i9lwwsY93gNVV_OcVtH271skSYXQyqRYwSGDRg/viewform">{'Fill out the "Getting to Know You" survey.'}</a>
+              title: <a target="_blank" rel='noreferrer'
+                        className='text-blue-500 hover:underline hover:text-blue-700'
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScxjWXdF0t8i9lwwsY93gNVV_OcVtH271skSYXQyqRYwSGDRg/viewform">{'Fill out the "Getting to Know You" survey.'}</a>
             },
             {
-              title: <p><span className='italic'>Optional: </span> Check out our <Link className='text-blue-500 hover:underline hover:text-blue-700' href="/webdev101">Web Dev 101 resources</Link></p>
-            }
+              title: <p><span className='italic'>Optional: </span> Pick a code editor to use!</p>,
+              bullets: ["General Recommendation: VSCode", "All-In-One Solution: WebStorm", "Power Users: Vim/Neovim"]
+            },
+            {
+              title: <p>Add your name to the developers list on the <Link className={"text-blue-500 hover:underline"} href={"/about"}>about page</Link></p>,
+              bullets: [
+                <p key={1}>Do this <span className={"italic underline"}>AFTER</span> Workshop A: Git/GitHub</p>,
+                <p key={2}>Submit a <span className={"italic font-semibold"}>pull request</span> to this <Link target="_blank" className="text-blue-500 hover:underline" href={"https://github.com/gabrielsessions/dfs-jumbocode"}>GitHub repository</Link>.</p>
+              ]
+            },
+            {
+              title: <p><span className='italic'>Optional: </span> Check out our
+                <Link className='text-blue-500 hover:underline hover:text-blue-700'
+                      href="/webdev101"> Web Dev 101 resources</Link></p>
+            },
           ])
         }
         <p className='my-2 mt-4 underline text-lg'>Upcoming Meetings & Workshops</p>
@@ -70,21 +86,24 @@ const cards: Array<CardContentInterface> = [
             bullets: ["Details TBD"]
           },
           {
-            title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop A: Introduction to Git/GitHub</p>,
+            title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop A:
+              Introduction to Git/GitHub</p>,
             bullets: [
               "Option 1: Monday, October 2nd from 8:30pm - 9:30pm in JCC 170",
               "Option 2: Thursday, October 5th from 7:30pm - 8:30pm in SEC 253"
             ]
           },
           {
-            title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop B: Introduction to React</p>,
+            title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop B:
+              Introduction to React</p>,
             bullets: [
               "Option 1: Monday, October 9th from 8:30pm - 9:30pm in Cabot ASEAN",
               "Option 2: Thursday, October 12th from 7:30pm - 8:30pm in SEC 253"
             ]
           },
           {
-            title: <p><span className='italic underline'>Optional (but recommended)</span> Developer Workshop C: More React + APIs</p>,
+            title: <p><span className='italic underline'>Optional (but recommended)</span> Developer
+              Workshop C: More React + APIs</p>,
             bullets: [
               "Option 1: Monday, October 16th from 8:30pm - 9:30pm in JCC 170",
               "Option 2: Thursday, October 19th from 7:30pm - 8:30pm in SEC 253"
@@ -105,7 +124,7 @@ const cards: Array<CardContentInterface> = [
 export default function Home() {
   return (
     <>
-      <Navbar activeTab='Home' />
+      <Navbar activeTab='Home'/>
       <div className='text-center font-semibold mb-4 mx-2'>
         <h1 className='text-3xl md:text-5xl my-4'>Welcome to JumboCode!</h1>
         <h2 className='text-2xl my-6'>Dress for Success</h2>
@@ -116,7 +135,7 @@ export default function Home() {
         cards.map((card, index) => {
           return (
             <div key={index}>
-              <Card title={card.title} body={card.body} />
+              <Card title={card.title} body={card.body}/>
             </div>
           )
         })

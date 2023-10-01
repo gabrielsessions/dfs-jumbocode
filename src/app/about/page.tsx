@@ -53,7 +53,8 @@ export default function About() {
         title="Project Overview" 
         body={
           <>
-            <Link target="_blank" className="text-blue-500 hover:underline" href="https://docs.google.com/document/d/1b2_bDoFQqHmApF2eS4tG20Gx1c1LGOonL8n0ywpaUxE/edit">Link to the Project Spec</Link>
+            <h4 className="text-xl underline my-4">Project Goals</h4>
+            <p>Coming Soon!</p>
 
             <h4 className="text-xl underline my-4">Tech Stack</h4>
             {
