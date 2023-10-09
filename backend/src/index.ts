@@ -4,6 +4,7 @@ import { cors } from 'hono/cors'
 /**
  * gabriel - Returns a fun fact about dogs using an API call
  * Returns an error message to the frontend if the API call fails
+ * @returns string - A fun fact about dogs
  */
 async function gabriel(): Promise<string> {
   const factRequest = await fetch("https://dog-api.kinduff.com/api/facts");
@@ -21,14 +22,17 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+// App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
 
-// Default hello world endpoint
+// Default hello world endpoint, handles all "/" GET requests
 app.get('/', (c) => c.text('Hello, World!'));
 
 // Add your fun facts in this endpoint!
-app.get('/people/:person', async (c) => {
+// This endpoint handles all GET requests with the URL path "/people/{person}"
+// This simple GET request returns text to the client
+app.get('/people/:person', async (c): Promise<Response> => {
   const person: string = c.req.param('person');
   switch (person) {
     case "Gabriel":

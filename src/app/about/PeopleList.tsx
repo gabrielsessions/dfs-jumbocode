@@ -1,6 +1,6 @@
 "use client"
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Card from "@/components/Card";
 
 /**
@@ -18,14 +18,33 @@ export default function PeopleList() {
    */
   async function getFunFact(person: string): Promise<void> {
     setFunFact("Loading Fun Fact...");
-    const funFactRequest = await fetch("http://localhost:3100/people/" + person);
-    if (!funFactRequest.ok) {
-      alert("Fetch Request Failed!");
-      return;
+    try {
+      const funFactRequest = await fetch("http://localhost:3100/people/" + person);
+
+      const funFact = await funFactRequest.text();
+      setFunFact(`${person}'s Fun Fact: ${funFact}`);
     }
-    const funFact = await funFactRequest.text();
-    setFunFact(`${person}'s Fun Fact: ${funFact}`);
+    catch (e) {
+      setFunFact(`Error fetching ${person}'s fun fact. Is the backend server up?`)
+    }
+
   }
+
+  // Checks if a local backend server is running
+  useEffect(() => {
+    async function checkIfBackendIsUp() {
+      try {
+        await fetch("http://localhost:3100");
+        setFunFact("Backend server is running: Click on a name to get a fun fact!")
+      }
+      catch (e) {
+        setFunFact("Backend server is not running. Please run the backend server locally to view some fun facts!")
+      }
+
+    }
+    checkIfBackendIsUp();
+  }, []);
+
   return (
     <Card
       title={"The Team"}
@@ -39,7 +58,7 @@ export default function PeopleList() {
                 {/* A possible way to implement a clickable name */}
                 <li
                   className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
-                  onClick={() => getFunFact("gabriel")}
+                  onClick={() => getFunFact("Gabriel")}
                 >
                   Tech Lead: Gabriel Sessions
                 </li>
@@ -67,7 +86,7 @@ export default function PeopleList() {
               </ul>
             </div>
           </div>
-          <p className={"mt-4"}>{funFact ? funFact : "If you're running this locally: Click on a name to get a fun fact!"}</p>
+          <p className={"mt-4"}>{funFact ? funFact : "Checking backend server status..."}</p>
         </>
       }
     />
