@@ -39,13 +39,21 @@ const week1: CardContentInterface = {
   title: "Week of 10/8: Onboarding (Part 2)",
   body:
     <>
-      <p>{"Welcome back! This week we'll be getting your development environment set up and providing some easy tickets to start practicing PRs and some basic React."}</p>
+      <p>{"Welcome back! This week we'll be getting your development environment set up!"}</p>
       <p className='my-2 mt-4 underline text-lg'>Action Items</p>
       {
         generateBullets([
           {
             title: <p>Pick a code editor to use!</p>,
             bullets: ["General Recommendation: VSCode", "Bloated Option: WebStorm", "Power Users: Vim/Neovim"]
+          },
+          {
+            title: <p>Install the following:</p>,
+            bullets: [
+              <Link className={"text-blue-500 hover:underline"} key={1} href={"https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"}>Git</Link>,
+              <Link className={"text-blue-500 hover:underline"} key={2} href={"https://nodejs.org/en"}>Node.js</Link>,
+              <Link className={"text-blue-500 hover:underline"} key={3} href={"https://bun.sh/"}>Bun</Link>
+            ]
           },
           {
             title: <p>Add your name to the developers list on the <Link className={"text-blue-500 hover:underline"} href={"/about"}>about page</Link></p>,
@@ -63,18 +71,47 @@ const week1: CardContentInterface = {
             title: "REQUIRED: Attend a session of Developer Workshop B: Introduction to React"
           },
           {
-            title: <p>Fetch a fun fact from the backend by clicking on your name on the <Link className={"text-blue-500 hover:underline"} href={"/about"}>about page</Link></p>,
+            title: <p>Fetch a fun fact from the backend by making your name clickable on the <Link className={"text-blue-500 hover:underline"} href={"/about"}>about page</Link></p>,
             bullets: [
               <p key={0}>Please install Bun before attempting this task. Directions are in the backend README.</p>,
-              <p key={1}>Do this <span className={"italic underline"}>AFTER</span> you add your name to the developers list and submit a PR.</p>,
+              <p key={1}>Do this <span className={"italic underline"}>AFTER</span> you add your name to the developers list and successfully submit your first PR.</p>,
               <p key={2}>Make your name clickable and trigger an API call onClick to the backend.</p>,
-              <p key={3}>Modify the backend to return a fun fact when your name is called using the API!</p>,
+              <p key={3}>Modify the backend to return a fun fact when your name is called using the provided API endpoint.</p>,
               <p key={4}>Run the frontend and backend servers at the same time to verify that you can fetch and display your fun fact on the frontend.</p>,
-              <p key={5}>Submit a <span className={"italic font-semibold"}>pull request</span> to this <Link target="_blank" className="text-blue-500 hover:underline" href={"https://github.com/gabrielsessions/dfs-jumbocode"}>GitHub repository</Link> when you are done.</p>
+              <p key={5}>Submit a <span className={"italic font-semibold"}>pull request</span> to this <Link target="_blank" className="text-blue-500 hover:underline" href={"https://github.com/gabrielsessions/dfs-jumbocode"}>GitHub repository</Link> when you are done.</p>,
+              <p key={6}>{"Congratulations! You've made a full-stack button!"}</p>
             ]
           },
         ])
       }
+
+      <p className='my-2 mt-4 underline text-lg'>Upcoming Meetings & Workshops</p>
+      {generateBullets([
+        {
+          title: "Sunday October 15th (7:00 - 8:00PM): Hack Night!",
+          bullets: ["JCC Room 170"]
+        },
+        {
+          title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop B:
+            Introduction to React</p>,
+          bullets: [
+            "Option 1: Monday, October 9th from 8:30pm - 9:30pm in Cabot ASEAN",
+            "Option 2: Thursday, October 12th from 7:30pm - 8:30pm in SEC 253"
+          ]
+        },
+        {
+          title: <p><span className='italic underline'>Optional (but recommended)</span> Developer
+            Workshop C: More React + APIs</p>,
+          bullets: [
+            "Option 1: Monday, October 16th from 8:30pm - 9:30pm in JCC 170",
+            "Option 2: Thursday, October 19th from 7:30pm - 8:30pm in SEC 253"
+          ]
+        },
+        {
+          title: <p>Weekly Meeting</p>,
+          bullets: ["Times to be decided on 10/9"]
+        }
+      ])}
     </>
 }
 
@@ -95,13 +132,7 @@ const week0: CardContentInterface = {
                       className='text-blue-500 hover:underline hover:text-blue-700'
                       href="https://docs.google.com/forms/d/e/1FAIpQLScxjWXdF0t8i9lwwsY93gNVV_OcVtH271skSYXQyqRYwSGDRg/viewform">{'Fill out the "Getting to Know You" survey.'}</a>
           },
-          {
-            title: <p>Add your name to the developers list on the <Link className={"text-blue-500 hover:underline"} href={"/about"}>about page</Link></p>,
-            bullets: [
-              <p key={1}>Do this <span className={"italic underline"}>AFTER</span> Workshop A: Git/GitHub</p>,
-              <p key={2}>Submit a <span className={"italic font-semibold"}>pull request</span> to this <Link target="_blank" className="text-blue-500 hover:underline" href={"https://github.com/gabrielsessions/dfs-jumbocode"}>GitHub repository</Link>.</p>
-            ]
-          },
+
         ])
       }
       <p className='my-2 mt-4 underline text-lg'>Upcoming Meetings & Workshops</p>
@@ -118,22 +149,6 @@ const week0: CardContentInterface = {
             "Option 2: Thursday, October 5th from 7:30pm - 8:30pm in SEC 253"
           ]
         },
-        {
-          title: <p><span className='font-semibold underline'>REQUIRED</span> Developer Workshop B:
-            Introduction to React</p>,
-          bullets: [
-            "Option 1: Monday, October 9th from 8:30pm - 9:30pm in Cabot ASEAN",
-            "Option 2: Thursday, October 12th from 7:30pm - 8:30pm in SEC 253"
-          ]
-        },
-        {
-          title: <p><span className='italic underline'>Optional (but recommended)</span> Developer
-            Workshop C: More React + APIs</p>,
-          bullets: [
-            "Option 1: Monday, October 16th from 8:30pm - 9:30pm in JCC 170",
-            "Option 2: Thursday, October 19th from 7:30pm - 8:30pm in SEC 253"
-          ]
-        }
       ])}
     </>
 }
