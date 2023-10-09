@@ -38,6 +38,10 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
+
+    case "Ryan":
+      return c.text("In the summer, Ryan plays xylophone in a funk/fusion band!");
+
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
