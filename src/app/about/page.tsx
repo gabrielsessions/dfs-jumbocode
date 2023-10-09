@@ -40,7 +40,7 @@ export default function About() {
                 <li className="list-item">Developer: </li>
                 <li className="list-item">Developer: </li>
                 <li className="list-item">Developer: </li>
-
+                <li className="list-item">Developer: [example] Jyoti </li>
                 </ul>
               </div>
             </div>
