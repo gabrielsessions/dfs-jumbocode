@@ -1,6 +1,6 @@
 "use client"
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 
 /**
@@ -68,7 +68,7 @@ export default function PeopleList() {
                 {/* Developers: Add your names here! */}
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Emma Paterson</li>
                 <li className="list-item">Developer:</li>
               </ul>
             </div>
