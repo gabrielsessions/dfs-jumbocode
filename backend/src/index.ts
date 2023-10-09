@@ -22,6 +22,22 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+async function emma(): Promise<string> {
+  const factRequest = await fetch("https://dog-api.kinduff.com/api/facts");
+  if (!factRequest.ok) {
+    return "I ran into a problem fetching a fun fact!";
+  }
+  const factJSON: {
+    facts: Array<string>,
+    success: boolean
+  } = await factRequest.json();
+
+  if (!factJSON || factJSON.facts.length == 0) {
+    return "I ran into a problem unpacking a fun fact!";
+  }
+  return factJSON.facts[0];
+}
+
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -38,6 +54,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
+    case "Emma":
+      const emmaFunFact: string = await emma();
+      return c.text(emmaFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
