@@ -76,7 +76,7 @@ export default function PeopleList() {
               <ul className="list-disc ml-6">
 
                 {/* Developers: Add your names here! */}
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Ryan McClennen</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
