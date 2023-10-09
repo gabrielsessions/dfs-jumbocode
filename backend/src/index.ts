@@ -43,7 +43,7 @@ app.get('/people/:person', async (c): Promise<Response> => {
   }
 })
 
-console.log("Running a bun server on Port 3100...")
+console.log("Running a bun server on Port 3100...");
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
