@@ -81,7 +81,7 @@ export default function PeopleList() {
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Shannon Tang</li>
 
               </ul>
             </div>
