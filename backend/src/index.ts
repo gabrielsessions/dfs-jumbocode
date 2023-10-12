@@ -22,6 +22,16 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+/**
+ * Javier - Returns his favorite icecream using an API call
+ * Returns an error message to the frontend if the API call fails
+ * @returns string - ice cream
+ */
+async function Javier(): Promise<string> {
+  
+  return "I like vanilla ice cream";
+}
+
 
 
 /**
@@ -42,7 +52,6 @@ async function emma(): Promise<string> {
   return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
 }
 
-
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -59,6 +68,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
+    case "Javier":
+      const javierFunFact: string = await Javier();
+      return c.text(javierFunFact, 200)
     case "Charlotte":
       const charlotteFunFact: string = charlotte();
       return c.text(charlotteFunFact, 200)
