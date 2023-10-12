@@ -53,7 +53,9 @@ export default function PeopleList() {
           <div className="md:grid md:grid-cols-2">
             <div>
               <ul className="list-disc ml-6 -mt-1">
-                <li className="list-item">Project Manager: Jyoti Bhardwaj</li>
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Jyoti")}>
+                    Project Manager: Jyoti Bhardwaj</li>
 
                 {/* A possible way to implement a clickable name */}
                 <li

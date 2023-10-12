@@ -22,6 +22,10 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+async function jyoti(): Promise<string> {
+  return "I have a blackbelt in taekwondo";
+}
+
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -38,6 +42,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
+    case "Jyoti":
+      const jyotiFunFact: string = await jyoti();
+      return c.text(jyotiFunFact, 200)
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
