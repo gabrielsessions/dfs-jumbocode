@@ -34,6 +34,14 @@ function charlotte(): Promise<string> {
 }
 
 
+async function jyoti(): Promise<string> {
+  return "I have a blackbelt in taekwondo";
+}
+
+async function emma(): Promise<string> {
+  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
+}
+
 
 // App Initialization
 const app = new Hono();
@@ -54,12 +62,18 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Charlotte":
       const charlotteFunFact: string = charlotte();
       return c.text(charlotteFunFact, 200)
+    case "Jyoti":
+      const jyotiFunFact: string = await jyoti();
+      return c.text(jyotiFunFact, 200)
+    case "Emma":
+      const emmaFunFact: string = await emma();
+      return c.text(emmaFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
 })
 
-console.log("Running a bun server on Port 3100...")
+console.log("Running a bun server on Port 3100...");
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
