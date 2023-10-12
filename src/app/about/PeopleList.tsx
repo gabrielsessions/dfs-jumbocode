@@ -70,12 +70,12 @@ export default function PeopleList() {
                 {/* Developers: Add your names here! */}
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Charlotte Versavel</li>
                 <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
                   onClick={() => getFunFact("Emma")}
                 >
                   Developer: Emma Paterson
                 </li>
-                <li className="list-item">Developer:</li>
               </ul>
             </div>
             <div>
