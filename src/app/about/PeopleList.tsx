@@ -83,8 +83,13 @@ export default function PeopleList() {
               <ul className="list-disc ml-6">
 
                 {/* Developers: Add your names here! */}
+                <li
+                  className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Ryan")}
+                >
+                  Developer: Ryan McClennen
+                </li>
                 <li className="list-item">Developer: John Cha</li>
-                <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
