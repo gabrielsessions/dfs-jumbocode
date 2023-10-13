@@ -28,18 +28,15 @@ async function gabriel(): Promise<string> {
  * @returns string - ice cream
  */
 async function Javier(): Promise<string> {
-  
   return "I like vanilla ice cream";
 }
-
-
 
 /**
  * charlotte - Returns a fun fact about dogs using an API call
  * Returns an error message to the frontend if the API call fails
  * @returns string - A fun fact about dogs
  */
-function charlotte(): Promise<string> {
+function charlotte(): string {
   return "Charlotte has no fun facts";
 }
 
