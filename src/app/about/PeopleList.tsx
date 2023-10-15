@@ -1,6 +1,6 @@
 "use client"
 
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 
 /**
@@ -53,7 +53,9 @@ export default function PeopleList() {
           <div className="md:grid md:grid-cols-2">
             <div>
               <ul className="list-disc ml-6 -mt-1">
-                <li className="list-item">Project Manager: Jyoti Bhardwaj</li>
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Jyoti")}>
+                    Project Manager: Jyoti Bhardwaj</li>
 
                 {/* A possible way to implement a clickable name */}
                 <li
@@ -66,22 +68,33 @@ export default function PeopleList() {
                 <li className="list-item">Designer: Andy Xu</li>
 
                 {/* Developers: Add your names here! */}
-                <li className="list-item">Developer: Iris Yang</li>
+
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Javier")}> Developer: Javier Friedman</li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Charlotte Versavel</li>
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Emma")}
+                >
+                  Developer: Emma Paterson
+                </li>
               </ul>
             </div>
             <div>
               <ul className="list-disc ml-6">
 
                 {/* Developers: Add your names here! */}
+                <li
+                  className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("Ryan")}
+                >
+                  Developer: Ryan McClennen
+                </li>
+                <li className="list-item">Developer: John Cha</li>
+                <li className="list-item">Developer: Iris Yang</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Shannon Tang</li>
 
               </ul>
             </div>
