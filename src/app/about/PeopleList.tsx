@@ -68,7 +68,7 @@ export default function PeopleList() {
                 {/* Developers: Add your names here! */}
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Bingyu Wu</li>
                 <li className="list-item">Developer:</li>
               </ul>
             </div>
