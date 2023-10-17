@@ -51,7 +51,7 @@ async function emma(): Promise<string> {
 
 // App Initialization
 const app = new Hono();
-app.use('/people/*', cors());
+app.use('*', cors());
 
 // Default hello world endpoint, handles all "/" GET requests
 app.get('/', (c) => c.text('Hello, World!'));

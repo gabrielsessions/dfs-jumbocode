@@ -59,11 +59,16 @@ const week2: CardContentInterface = {
                     href="/webdev101"> Web Dev 101 resources</Link></p>
           },
           {
-            title: "Optional: Attend a session of Developer Workshop C: React State and APIs"
+            title: <p><span className='italic'>Optional: </span>  Attend a session of Developer Workshop C: React State and APIs</p>
           },
           {
-            title: "More action items coming soon!",
-            bullets: ["More items will likely be posted after our weekly meeting"]
+            title: "Start on the AI Chatbot Activity",
+            bullets: [
+              <p key={1}>HTML/CSS/JS slides are on the <Link href={"/webdev101"} className={"text-blue-500 hover:underline"}>Tutorials Page</Link></p>,
+              <p key={2}>Link to the <Link href={"https://codesandbox.io/s/jumbocode-onboarding-chatbot-53qstt"} className={"text-blue-500 hover:underline"}>Starter Code</Link></p>,
+              <p key={3}>{"[Gabriel's Implementation Coming Soon!]"}</p>
+
+            ]
           },
         ])
       }
@@ -83,8 +88,8 @@ const week2: CardContentInterface = {
           ]
         },
         {
-          title: <p>Weekly Meeting</p>,
-          bullets: ["Attend at least one weekly meeting!"]
+          title: <p>Weekly Meetings</p>,
+          bullets: ["Attend at least one weekly meeting!", "See the schedule at the top of this page."]
         }
       ])}
     </>
