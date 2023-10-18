@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import SlideshowIframe from "@/components/SlideshowIframe";
 import VideoIframe from "@/components/VideoIframe";
+import Link from "next/link";
 
 /**
  * Intro - Generates a page with a list of tutorial videos and slideshows
@@ -12,24 +13,31 @@ export default function Intro() {
     <>
       <Navbar activeTab="Tutorials"/>
       <div className='text-center font-semibold my-4 mx-1'>
-        <h1 className='text-3xl md:text-5xl my-2 mb-4'>Web Dev 101</h1>
+        <h1 className='text-3xl md:text-5xl my-2 mb-4'>Web Development Tutorials</h1>
         <p className='font-normal'>{"A quick introduction to web development!"}</p>
       </div>
 
       <div className="border p-4 mx-4 my-4">
-        <h3 className="text-lg mb-4">Gabriel Sessions: Introduction to HTML/CSS/JS</h3>
-        <SlideshowIframe link={"https://docs.google.com/presentation/d/e/2PACX-1vQycnqOatYPIaPBrWqJ1PfBHA5w2waCiI2_8XRnO6VKGYf2HfTF83cG-HZCLv4joFGij-m845E3lcqR/embed?start=false&loop=false"} />
+        <h3 className="text-lg mb-4">
+          <Link
+            href={"https://docs.google.com/presentation/d/117ATPzGhrRXNg05i1U3NxxPRf2zpSb6HRDIJel3Gbpg/edit?usp=sharing"}
+            className={"text-blue-500 hover:underline"}
+          >
+            Gabriel Sessions: Introduction to HTML/CSS/JS
+          </Link></h3>
+        <SlideshowIframe
+          link={"https://docs.google.com/presentation/d/e/2PACX-1vQycnqOatYPIaPBrWqJ1PfBHA5w2waCiI2_8XRnO6VKGYf2HfTF83cG-HZCLv4joFGij-m845E3lcqR/embed?start=false&loop=false"}/>
 
       </div>
 
       <div className="xl:grid xl:grid-cols-2">
         <div className="border p-4 mx-4 my-2">
           <h3 className="text-lg mb-4">Fireship: 100+ Web Development Things You Should Know</h3>
-          <VideoIframe link={"https://www.youtube.com/embed/erEgovG9WBs?si=EW8oVfjWx_qfb6X2"} />
+          <VideoIframe link={"https://www.youtube.com/embed/erEgovG9WBs?si=EW8oVfjWx_qfb6X2"}/>
         </div>
         <div className="border p-4 mx-4 my-2">
           <h3 className="text-lg mb-4">Fireship: 100 JavaScript Concepts You Need to Know</h3>
-          <VideoIframe link={"https://www.youtube.com/embed/lkIFF4maKMU?si=OxF82X4KIRpNM450"} />
+          <VideoIframe link={"https://www.youtube.com/embed/lkIFF4maKMU?si=OxF82X4KIRpNM450"}/>
         </div>
 
       </div>
@@ -48,9 +56,6 @@ export default function Intro() {
           link={"https://www.youtube.com/embed/__mSgDEOyv8?si=FTSNvKxczTdy7lI_"}
         />
       </div>
-
-
-
 
 
     </>

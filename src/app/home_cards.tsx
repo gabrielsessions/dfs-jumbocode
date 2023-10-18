@@ -49,7 +49,7 @@ const week2: CardContentInterface = {
           {
             title: <p>Complete any incomplete tickets from last week</p>,
             bullets: [
-              <p key={1}>Your First PR: Adding you name to the devs list on the <Link href={"/about"} className={"text-blue-500 hover:underlin"}>About Page</Link></p>,
+              <p key={1}>Your First PR: Adding you name to the devs list on the <Link href={"/about"} className={"text-blue-500 hover:underline"}>About Page</Link></p>,
               <p key={2}>Creating a full-stack fun fact button (directions in Week 1)</p>
             ]
           },
