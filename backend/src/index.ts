@@ -22,6 +22,8 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+
+
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -35,6 +37,8 @@ app.get('/', (c) => c.text('Hello, World!'));
 app.get('/people/:person', async (c): Promise<Response> => {
   const person: string = c.req.param('person');
   switch (person) {
+    case "John Cha":
+      return c.text("His favorite nickname is J-Money.");
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
