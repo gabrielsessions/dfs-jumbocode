@@ -92,7 +92,7 @@ export default function PeopleList() {
                 </li>
                 <li className="list-item">Developer: John Cha</li>
                 <li className="list-item">Developer: Iris Yang</li>
-                <li className="list-item">Developer:</li>
+                <li className="list-item">Developer: Matthew Johnson</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer: Shannon Tang</li>
 
