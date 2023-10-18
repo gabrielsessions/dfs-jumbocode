@@ -22,6 +22,15 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+/**
+ * shannon - Returns a fun fact about dogs using an API call
+ * Returns an error message to the frontend if the API call fails
+ * @returns string - A fun fact about dogs
+ */
+function shannon() : string{
+  return "I like to crochet";
+}
+
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -37,7 +46,10 @@ app.get('/people/:person', async (c): Promise<Response> => {
   switch (person) {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
-      return c.text(gabrielFunFact, 200)
+      return c.text(gabrielFunFact, 200);
+    case "Shannon":
+      const shannonFunFact: string = shannon();
+      return c.text(shannonFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
