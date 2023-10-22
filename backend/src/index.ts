@@ -26,7 +26,7 @@ async function gabriel(): Promise<string> {
 
 // App Initialization
 const app = new Hono();
-app.use('/people/*', cors());
+app.use('*', cors());
 
 // Default hello world endpoint, handles all "/" GET requests
 app.get('/', (c) => c.text('Hello, World!'));
@@ -41,13 +41,27 @@ app.get('/people/:person', async (c): Promise<Response> => {
       return c.text("His favorite nickname is J-Money.");
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
-      return c.text(gabrielFunFact, 200)
+      return c.text(gabrielFunFact, 200);
+    case "Ryan":
+      return c.text("In the summer, Ryan plays xylophone in a funk/fusion band!");
+    case "Javier":
+      const javierFunFact: string = await Javier();
+      return c.text(javierFunFact, 200);
+    case "Charlotte":
+      const charlotteFunFact: string = charlotte();
+      return c.text(charlotteFunFact, 200);
+    case "Jyoti":
+      const jyotiFunFact: string = await jyoti();
+      return c.text(jyotiFunFact, 200);
+    case "Emma":
+      const emmaFunFact: string = await emma();
+      return c.text(emmaFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
 })
 
-console.log("Running a bun server on Port 3100...")
+console.log("Running a bun server on Port 3100...");
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
