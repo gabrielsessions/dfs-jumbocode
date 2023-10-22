@@ -46,7 +46,11 @@ async function jyoti(): Promise<string> {
 }
 
 async function emma(): Promise<string> {
-  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
+  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)";
+}
+
+async function alyssa(): Promise<string> {
+  return "I've owned ferrets all my life!";
 }
 
 // App Initialization
@@ -79,6 +83,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Emma":
       const emmaFunFact: string = await emma();
       return c.text(emmaFunFact, 200);
+    case "Alyssa":
+      const alyssaFunFact: string = await alyssa();
+      return c.text(alyssaFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
