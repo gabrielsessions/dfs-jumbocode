@@ -23,6 +23,15 @@ async function gabriel(): Promise<string> {
 }
 
 /**
+ * shannon - Returns a fun fact about dogs using an API call
+ * Returns an error message to the frontend if the API call fails
+ * @returns string - A fun fact about dogs
+ */
+function shannon() : string {
+  return "I like to crochet";
+}
+
+/**
  * Javier - Returns his favorite icecream using an API call
  * Returns an error message to the frontend if the API call fails
  * @returns string - ice cream
@@ -65,6 +74,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200);
+    case "Shannon":
+      const shannonFunFact: string = shannon();
+      return c.text(shannonFunFact, 200);
     case "Ryan":
       return c.text("In the summer, Ryan plays xylophone in a funk/fusion band!");
     case "Javier":
