@@ -49,6 +49,14 @@ function charlotte(): string {
   return "Charlotte has no fun facts";
 }
 
+async function jyoti(): Promise<string> {
+  return "I have a blackbelt in taekwondo";
+}
+
+async function emma(): Promise<string> {
+  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
+}
+
 
 // App Initialization
 const app = new Hono();
