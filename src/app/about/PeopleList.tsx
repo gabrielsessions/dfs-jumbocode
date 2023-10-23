@@ -100,7 +100,8 @@ export default function PeopleList() {
                   Developer: Alyssa Williams
                 </li>
                 <li className="list-item">Developer:</li>
-                <li className="list-item">Developer: Shannon Tang</li>
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer" 
+                onClick={() => getFunFact("Shannon")}>Developer: Shannon Tang</li>
 
               </ul>
             </div>
