@@ -23,6 +23,15 @@ async function gabriel(): Promise<string> {
 }
 
 /**
+ * shannon - Returns a fun fact about dogs using an API call
+ * Returns an error message to the frontend if the API call fails
+ * @returns string - A fun fact about dogs
+ */
+function shannon() : string {
+  return "I like to crochet";
+}
+
+/**
  * Javier - Returns his favorite icecream using an API call
  * Returns an error message to the frontend if the API call fails
  * @returns string - ice cream
@@ -40,13 +49,16 @@ function charlotte(): string {
   return "Charlotte has no fun facts";
 }
 
-
 async function jyoti(): Promise<string> {
   return "I have a blackbelt in taekwondo";
 }
 
 async function emma(): Promise<string> {
-  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
+  return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)";
+}
+
+async function alyssa(): Promise<string> {
+  return "I've owned ferrets all my life!";
 }
 
 async function bingyu(): Promise<string> {
@@ -66,9 +78,14 @@ app.get('/', (c) => c.text('Hello, World!'));
 app.get('/people/:person', async (c): Promise<Response> => {
   const person: string = c.req.param('person');
   switch (person) {
+    case "John Cha":
+      return c.text("His favorite nickname is J-Money.");
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200);
+    case "Shannon":
+      const shannonFunFact: string = shannon();
+      return c.text(shannonFunFact, 200);
     case "Ryan":
       return c.text("In the summer, Ryan plays xylophone in a funk/fusion band!");
     case "Javier":
@@ -86,6 +103,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Bingyu":
       const bingyuFunFact: string = await bingyu();
       return c.text(bingyuFunFact, 200);
+    case "Alyssa":
+      const alyssaFunFact: string = await alyssa();
+      return c.text(alyssaFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
