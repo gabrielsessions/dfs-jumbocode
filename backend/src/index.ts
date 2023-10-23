@@ -49,7 +49,6 @@ function charlotte(): string {
   return "Charlotte has no fun facts";
 }
 
-
 async function jyoti(): Promise<string> {
   return "I have a blackbelt in taekwondo";
 }
@@ -61,6 +60,7 @@ async function emma(): Promise<string> {
 async function alyssa(): Promise<string> {
   return "I've owned ferrets all my life!";
 }
+
 
 // App Initialization
 const app = new Hono();
@@ -75,6 +75,8 @@ app.get('/', (c) => c.text('Hello, World!'));
 app.get('/people/:person', async (c): Promise<Response> => {
   const person: string = c.req.param('person');
   switch (person) {
+    case "John Cha":
+      return c.text("His favorite nickname is J-Money.");
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200);
