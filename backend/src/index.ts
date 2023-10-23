@@ -49,6 +49,10 @@ async function emma(): Promise<string> {
   return "I like baking loaf breads! (pumpkin bread, lemon poppy seed bread, etc.)"
 }
 
+async function bingyu(): Promise<string> {
+  return "I update my personal blog every day";
+}
+
 // App Initialization
 const app = new Hono();
 app.use('*', cors());
@@ -79,6 +83,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Emma":
       const emmaFunFact: string = await emma();
       return c.text(emmaFunFact, 200);
+    case "Bingyu":
+      const bingyuFunFact: string = await bingyu();
+      return c.text(bingyuFunFact, 200);
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
