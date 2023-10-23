@@ -91,7 +91,8 @@ export default function PeopleList() {
                 >
                   Developer: Ryan McClennen
                 </li>
-                <li className="list-item">Developer: John Cha</li>
+                <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                  onClick={() => getFunFact("John Cha")}>Developer: John Cha</li>
                 <li className="list-item">Developer: Iris Yang</li>
                 <li className="list-item">Developer:</li>
                 <li className="list-item">Developer:</li>
