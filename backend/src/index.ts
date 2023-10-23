@@ -22,6 +22,10 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+async function iris(): string {
+  return "I can touch my nose with my tongue"
+}
+
 // App Initialization
 const app = new Hono();
 app.use('/people/*', cors());
@@ -38,6 +42,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
       return c.text(gabrielFunFact, 200)
+    case "Iris":
+      const irisFunFact: string = await iris();
+      return c.text(irisFunFact, 200)
     default:
       return c.text(`${person} has not been added to the backend yet!`);
   }
