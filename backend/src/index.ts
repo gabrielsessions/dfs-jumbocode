@@ -61,6 +61,9 @@ async function alyssa(): Promise<string> {
   return "I've owned ferrets all my life!";
 }
 
+async function bingyu(): Promise<string> {
+  return "I update my personal blog every day";
+}
 
 // App Initialization
 const app = new Hono();
@@ -97,6 +100,9 @@ app.get('/people/:person', async (c): Promise<Response> => {
     case "Emma":
       const emmaFunFact: string = await emma();
       return c.text(emmaFunFact, 200);
+    case "Bingyu":
+      const bingyuFunFact: string = await bingyu();
+      return c.text(bingyuFunFact, 200);
     case "Alyssa":
       const alyssaFunFact: string = await alyssa();
       return c.text(alyssaFunFact, 200);
