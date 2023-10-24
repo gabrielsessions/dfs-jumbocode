@@ -35,6 +35,47 @@ interface CardContentInterface {
   body: ReactNode
 }
 
+const week3: CardContentInterface = {
+  title: "Week of 10/22: React and Frontend Review",
+  body:
+  <>
+    <p className='my-2 mt-4 underline text-lg'>Action Items</p>
+    {
+      generateBullets([
+        {
+          title: <p>Continue to work on your onboarding tickets</p>,
+          bullets: [
+            <p key={1}>Full Stack Button: Make your name clickable on the <Link href={"/about"} className={"text-blue-500 hover:underline"}>About Page</Link>. Fetch a fun fact from the backend when your name is clicked.</p>,
+            <p key={2}>AI Chatbot: <Link href={"https://codesandbox.io/s/jumbocode-onboarding-chatbot-53qstt"} className={"text-blue-500 hover:underline"}>Starter Code</Link></p>,
+            <p key={3}>Optional Todo List: Create a basic todo list with all 4 CRUD operations using Next.js</p>
+          ]
+        },
+        {
+          title: <p>React + Misc. Frontend Presentation</p>,
+          bullets: [
+            <Link key={1} href="https://docs.google.com/presentation/d/1ZQIVk2bgqclszg7OdAxbqMFvLU4V7ttyZ21R4B0VyJo/edit?usp=sharing" className={"text-blue-500 hover:underline"}>Link to Slideshow</Link>
+          ]
+        }
+      ])
+    }
+    <p className='my-2 mt-4 underline text-lg'>Next Week</p>
+    {
+      generateBullets([
+        {
+          title: <p>Optional: Field Day (Sunday 8PM)</p>,
+        },
+        {
+          title: <p>Final Onboarding Presentation: Backend</p>,
+        },
+        {
+          title: <p>Your first (real) tickets!</p>,
+        },
+
+      ])
+    }
+  </>
+}
+
 const week2: CardContentInterface = {
   title: "Week of 10/15: HTML/CSS/JS Introduction",
   body:
@@ -227,7 +268,7 @@ const week0: CardContentInterface = {
 
 // Array of cards to display on the homepage
 const cards: Array<CardContentInterface> = [
-  week2, week1, week0
+  week3, week2, week1, week0
 ]
 
 
