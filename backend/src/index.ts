@@ -22,6 +22,9 @@ async function gabriel(): Promise<string> {
   return factJSON.facts[0];
 }
 
+async function iris(): string {
+  return "I can touch my nose with my tongue";
+}
 /**
  * shannon - Returns a fun fact about dogs using an API call
  * Returns an error message to the frontend if the API call fails
@@ -82,7 +85,10 @@ app.get('/people/:person', async (c): Promise<Response> => {
       return c.text("His favorite nickname is J-Money.");
     case "Gabriel":
       const gabrielFunFact: string = await gabriel();
-      return c.text(gabrielFunFact, 200);
+      return c.text(gabrielFunFact, 200)
+    case "Iris":
+      const irisFunFact: string = await iris();
+      return c.text(irisFunFact, 200)
     case "Shannon":
       const shannonFunFact: string = shannon();
       return c.text(shannonFunFact, 200);

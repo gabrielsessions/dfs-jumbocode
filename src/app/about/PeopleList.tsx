@@ -58,9 +58,9 @@ export default function PeopleList() {
                     Project Manager: Jyoti Bhardwaj</li>
 
                 {/* A possible way to implement a clickable name */}
-                <li
-                  className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
-                  onClick={() => getFunFact("Gabriel")}
+                <li 
+                className = "list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                onClick= {() => getFunFact("Gabriel")}
                 >
                   Tech Lead: Gabriel Sessions
                 </li>
@@ -68,7 +68,12 @@ export default function PeopleList() {
                 <li className="list-item">Designer: Andy Xu</li>
 
                 {/* Developers: Add your names here! */}
-
+                <li 
+                className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
+                onClick={() => getFunFact("Iris")}
+                > 
+                  Developer: Iris Yang
+                </li>
                 <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
                   onClick={() => getFunFact("Javier")}> Developer: Javier Friedman</li>
                 <li className="list-item w-fit text-blue-500 hover:underline cursor-pointer"
