@@ -16,6 +16,12 @@ export default function Intro() {
         <p className='font-normal'>{"A quick introduction to web development!"}</p>
       </div>
 
+      <div className="border p-4 mx-4 my-4">
+        <h3 className="text-lg mb-4">Gabriel Sessions: Introduction to HTML/CSS/JS</h3>
+        <SlideshowIframe link={"https://docs.google.com/presentation/d/e/2PACX-1vQycnqOatYPIaPBrWqJ1PfBHA5w2waCiI2_8XRnO6VKGYf2HfTF83cG-HZCLv4joFGij-m845E3lcqR/embed?start=false&loop=false"} />
+
+      </div>
+
       <div className="xl:grid xl:grid-cols-2">
         <div className="border p-4 mx-4 my-2">
           <h3 className="text-lg mb-4">Fireship: 100+ Web Development Things You Should Know</h3>
@@ -30,7 +36,7 @@ export default function Intro() {
 
       <div className="border p-4 mx-4 my-4">
         <h3 className="text-lg mb-4">Gabriel Sessions: Introduction to React Slides</h3>
-        <p>Updated slides to be posted soon!</p>
+        <SlideshowIframe link={"https://docs.google.com/presentation/d/e/2PACX-1vT5lLgAg9v65kxFQK_e01V8YcbZsub5kC2FfpnDVXjwfEGVJjVbTPiMtcrR_pmFu00A-ZWX5IYFurek/embed?start=false&loop=false&delayms=3000"} />
 
       </div>
 
