@@ -19,7 +19,7 @@ export default function PeopleList() {
   async function getFunFact(person: string): Promise<void> {
     setFunFact("Loading Fun Fact...");
     try {
-      const funFactRequest = await fetch("http://localhost:3100/people/" + person);
+      const funFactRequest = await fetch("http://35.225.35.46/people/" + person);
 
       const funFact = await funFactRequest.text();
       setFunFact(`${person}'s Fun Fact: ${funFact}`);
@@ -34,7 +34,7 @@ export default function PeopleList() {
   useEffect(() => {
     async function checkIfBackendIsUp() {
       try {
-        await fetch("http://localhost:3100");
+        await fetch("http://35.225.35.46/");
         setFunFact("Backend server is running: Click on a name to get a fun fact!")
       }
       catch (e) {
