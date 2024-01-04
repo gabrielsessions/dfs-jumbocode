@@ -9,5 +9,5 @@ COPY . .
 ENV NODE_ENV production
 
 USER bun
-EXPOSE 3000/tcp
+EXPOSE 3001/tcp
 CMD ["bun", "run", "src/index.ts"]

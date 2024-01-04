@@ -35,6 +35,76 @@ interface CardContentInterface {
   body: ReactNode
 }
 
+const january = {
+  title: "January 2024",
+  body: 
+  <>
+    <p className='my-2 mt-4 underline text-lg'>Tickets</p>
+    {
+      generateBullets([
+        {
+          title: <p>Please Finish Up Ticket 2!</p>,
+        },
+        {
+          title: <p>Ticket 3 will be released soon...</p>,
+        },
+      ])
+    }
+    <p className='my-2 mt-4 underline text-lg'>Optional Docker Lab</p>
+    <Link href={"/docker-lab"} className={"text-blue-500 hover:underline"}>Link to the Docker Lab</Link>
+  </>
+}
+
+const fall2023 : CardContentInterface = {
+  title: "The Rest of Fall 2023",
+  body:
+  <>
+    <p className='my-2 mt-4 underline text-lg'>Tickets</p>
+    {
+      generateBullets([
+        {
+          title: <p>Ticket 1</p>,
+          bullets: [
+            <p key={1}>Login Page</p>,
+            <p key={2}>Homepage Grid</p>,
+            <p key={3}>Cards to Display Items</p>,
+            <p key={4}>Miscellaneous Frontend Components</p>
+          ]
+        },
+        {
+          title: <p>Ticket 2</p>,
+          bullets: [
+            <p key={1}>Implementing Database CRUD Operations</p>,
+            <p key={2}>Form to add items to inventory</p>,
+            <p key={3}>Popup box to display item info/actions</p>,
+            <p key={4}>Navbar</p>,
+            <p key={5}>Assembling frontend components</p>
+          ]
+        }
+      ])
+    }
+    <p>Full ticket descriptions are avaliable on GitHub</p>
+    <p className='my-2 mt-4 underline text-lg'>Tutorials and Resources</p>
+    {
+      generateBullets([
+        {
+          title: <p>Backend Servers, Databases, and More!</p>,
+          bullets: [
+            <p key={1}><Link href={"https://docs.google.com/document/d/1REUNQRgQsoZ8DVMjXE8guH7I7MRdd2_NirdzO9NuD38/edit#heading=h.xtbepxz7y54h"} className={"text-blue-500 hover:underline"}>Link to Notes (Google Docs)</Link></p>,
+          ]
+        },
+        {
+          title: <p>Frontend</p>,
+          bullets: [
+            <p key={1}><Link href="https://docs.google.com/presentation/d/1ZQIVk2bgqclszg7OdAxbqMFvLU4V7ttyZ21R4B0VyJo/edit?usp=sharing" className={"text-blue-500 hover:underline"}>React Slides</Link></p>,
+          ]
+        }
+      ])
+    }
+    
+  </>
+}
+
 const week3: CardContentInterface = {
   title: "Week of 10/22: React and Frontend Review",
   body:
@@ -268,7 +338,7 @@ const week0: CardContentInterface = {
 
 // Array of cards to display on the homepage
 const cards: Array<CardContentInterface> = [
-  week3, week2, week1, week0
+  january,fall2023, week3, week2, week1, week0
 ]
 
 

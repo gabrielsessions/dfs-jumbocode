@@ -27,8 +27,8 @@ export default function Home() {
               <p>You should plan on attending <span className={"font-semibold italic"}>at least</span> one meeting per
                 week!</p>
               <ul className={"list-disc my-2"}>
-                <li className={"ml-6 list-item"}>Tuesday 7:30 - 8:30 PM: JCC 501</li>
-                <li className={"ml-6 list-item"}>Thursday 7:30 - 8:30 PM: SEC 327</li>
+                <li className={"ml-6 list-item"}>Spring Meeting #1 TBD</li>
+                <li className={"ml-6 list-item"}>Spring Meeting #2 TBD</li>
               </ul>
               <p className='my-2 mt-4 underline text-lg'>Hack Night</p>
               <p className={"-mb-4"}>Sunday 7:00 - 8:00 PM: JCC 170</p>

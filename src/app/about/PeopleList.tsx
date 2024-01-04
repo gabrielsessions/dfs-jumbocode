@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 
+const SERVER = "http://localhost:3001/";
+
 /**
  * PeopleList - A Card (box) that contains a list of the people on our team
  * If you run the backend server, you can fetch fun facts by clicking on some of the names.
@@ -19,7 +21,7 @@ export default function PeopleList() {
   async function getFunFact(person: string): Promise<void> {
     setFunFact("Loading Fun Fact...");
     try {
-      const funFactRequest = await fetch("http://35.225.35.46/people/" + person);
+      const funFactRequest = await fetch(SERVER + "people/" + person);
 
       const funFact = await funFactRequest.text();
       setFunFact(`${person}'s Fun Fact: ${funFact}`);
@@ -34,7 +36,7 @@ export default function PeopleList() {
   useEffect(() => {
     async function checkIfBackendIsUp() {
       try {
-        await fetch("http://35.225.35.46/");
+        await fetch(SERVER);
         setFunFact("Backend server is running: Click on a name to get a fun fact!")
       }
       catch (e) {
