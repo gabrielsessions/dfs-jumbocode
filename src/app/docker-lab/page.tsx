@@ -27,11 +27,10 @@ export default function Intro() {
 
       <div className="border p-4 mx-4 my-4">
         <h3 className="text-lg mb-4">Step 1: Install Docker</h3>
-        {"Here's"} a link to main <a href="https://docs.docker.com/engine/install/" className="text-blue-500 hover:underline">Docker installation</a> page. 
+        {"Here's"} a link to the main <a href="https://docs.docker.com/engine/install/" className="text-blue-500 hover:underline">Docker installation</a> page. 
         <p>Docker Desktop will install Docker Engine (which is what we want!)</p>
-        <p>There should be an installer for most operating systems, although MacOS has had issues in the past.</p>
 
-        <p className="mt-2">Run <code className="underline">docker --version</code> in a shell to check if Docker was installed correctly. You may need to modify PATH if it shows up as an invalid command.</p>
+        <p className="mt-2">Run <code className="underline">docker --version</code> in a shell to check if Docker was installed correctly. You may need to modify you {"computer's"} PATH variable if it shows up as an invalid command.</p>
         
       </div>
 
@@ -42,6 +41,34 @@ export default function Intro() {
         <p className="my-1">Create a new Ubuntu container by running <code>docker run -it ubuntu:latest</code></p>
 
         <p>This should open up an Ubuntu shell. Run some linux commands to verify that the container is running Ubuntu. {"You've"} created your first Docker container, congratulations!</p>
+        
+      </div>
+
+      <div className="border p-4 mx-4 my-4">
+        <h3 className="text-lg mb-4">Step 3: Run a Full Stack Web Application</h3>
+        <p className="mb-1">Now {"let's"} do something more interesting. {"I've"} created two images for this introductory dummy site and pushed them to Docker Hub, a marketplace for Docker images.</p>
+
+        <p className="mt-1">Go to my Docker Hub profile and pull the following images:</p>
+        <p className="ml-2 underline">gabrielsessions/dfs-jumbocode-intro-frontend</p>
+        <p className="ml-2 underline">gabrielsessions/dfs-jumbocode-intro-backend</p>
+
+        <p className="my-1">Open up the dfs-jumbocode-intro repository on your machine, the most recent version should have a <code>docker-compose.yml</code> file. Please pull from GitHub if you do not have the most recent version of the main branch. Alternatively you can add this file to your current working directory: <a href="https://github.com/gabrielsessions/dfs-jumbocode/blob/main/docker-compose.yml" className="text-blue-500 hover:underline">docker-compose.yml</a></p>
+
+        <p className="my-1">To run both the backend and frontend servers at the same time, run <code className="underline">docker compose up</code>. Both the frontend and backend servers should boot. Verify both servers are working by going to <a href="http://localhost:3000/about" className="text-blue-500 hover:underline">localhost:3000/about</a> and clicking on some of the names.</p>
+
+        <p>You can stop the servers with a CTRL-C. If they do not properly shut down after a CTRL-C, you can close the containers manually (ask Gabriel or Google how to run <code>docker stop</code>).</p>
+        
+      </div>
+
+      <div className="border p-4 mx-4 my-4">
+        <h3 className="text-lg mb-4">(Optional) Step 4: Creating your own Docker Image</h3>
+        <p className="mb-1">Open up the dfs-jumbocode-intro repository in a terminal (on the main branch). You should have a <code className="underline">Dockerfile</code> in the root directory.</p>
+
+        <p className="my-1">Open up the Dockerfile and take a look at its structure. You do not need to know what each of the commands do, but try to get a sense of how a Dockerfile sets up a server.</p>
+
+        <p className="my-1">Using this Dockerfile create a new image for the frontend server. Run <code className="underline">docker build . -t my-first-image</code>. This may take a while if the build process is slow.</p>
+
+        <p className="my-1">Now that you have an image set up, you can now build containers with this image. Pushing images to Docker Hub {"doesn't"} take too much additional work, but {"I'll"} leave the Googling to you.</p>
         
       </div>
     
