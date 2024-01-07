@@ -106,7 +106,6 @@ export default function Intro() {
         
       </div>
 
-
     </>
   )
 }
