@@ -63,7 +63,7 @@ export default function Intro() {
       </div>
 
       <div className="border p-4 mx-4 my-4">
-        <h3 className="text-lg mb-4">(Optional) Step 4: Creating your own Docker Image</h3>
+        <h3 className="text-lg mb-4">Step 4: Creating your own Docker Image</h3>
         <p className="mb-1">Open up the dfs-jumbocode-intro repository in a terminal (on the main branch). You should have a <code className="underline">Dockerfile</code> in the root directory.</p>
 
         <p className="my-1">Open up the Dockerfile and take a look at its structure. You do not need to know what each of the commands do, but try to get a sense of how a Dockerfile sets up a server.</p>
@@ -92,7 +92,7 @@ export default function Intro() {
             title: <p>What is a container? How is it different from an image?</p>,
           },
           {
-            title: <p>Outline the process of building an image (and container) from source code.</p>,
+            title: <p>Outline the process of building and running a container starting from source code.</p>,
           },
           {
             title: "Reflection",
