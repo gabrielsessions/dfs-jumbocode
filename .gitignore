@@ -8,6 +8,7 @@ backend/node_modules
 
 # bun
 backend/bun.lockb
+backend/.env
 
 # testing
 /coverage

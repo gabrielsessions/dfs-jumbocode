@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Card from "@/components/Card";
 
-const SERVER = "http://localhost:3001/";
+const SERVER = "http://localhost:8080/";
 
 /**
  * PeopleList - A Card (box) that contains a list of the people on our team

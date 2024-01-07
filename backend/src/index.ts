@@ -117,10 +117,10 @@ app.get('/people/:person', async (c): Promise<Response> => {
   }
 })
 
-console.log("Running a bun server on Port 3000...");
+console.log("Running a bun server on Port " + process.env.PORT);
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  port: 3001,
+  port: 8080,
   fetch: app.fetch,
 }

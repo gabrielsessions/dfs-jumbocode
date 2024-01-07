@@ -1,10 +1,10 @@
 version: '3.8'
 services:
   frontend:
-    build: gabrielsessions/dfs-jumbocode-intro-frontend
+    image: gabrielsessions/dfs-jumbocode-intro-frontend
     ports: 
       - 3000:3000 
   backend:
-    build: gabrielsessions/dfs-jumbocode-intro-backend
+    image: gabrielsessions/dfs-jumbocode-intro-backend
     ports:
       - 3001:3001
