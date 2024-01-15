@@ -7,4 +7,4 @@ services:
   backend:
     image: gabrielsessions/dfs-jumbocode-intro-backend:latest
     ports:
-      - 3001:3001
+      - 8080:8080
