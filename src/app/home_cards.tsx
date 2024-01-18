@@ -43,15 +43,22 @@ const january = {
     {
       generateBullets([
         {
-          title: <p>Please Finish Up Ticket 2!</p>,
+          title: <p>Finish Up Ticket 2</p>,
+          bullets: ["Note: There are some partner reassignments!", "Ticket 2 NEEDS to be done by Sunday 1/28."]
         },
         {
-          title: <p>Ticket 3 will be released soon...</p>,
+          title: <p>Ticket 3 will be released by January 26th</p>,
         },
       ])
     }
-    <p className='my-2 mt-4 underline text-lg'>Optional Docker Lab</p>
-    <Link href={"/docker-lab"} className={"text-blue-500 hover:underline"}>Link to the Docker Lab</Link>
+    <p className='my-2 mt-4 underline text-lg'>Slides/Notes/Labs</p>
+    <ol className={"list-disc ml-6"}>
+      <li className={"list-item"}><Link href={"https://docs.google.com/presentation/d/1TBhTV6WgpQZMQqsglNfliz2TfSPY6t0r4qnZO4EvprA/edit?usp=sharing"} className={"text-blue-500 hover:underline"}>Web Application Deployment Notes (Google Slides)</Link>
+        </li>
+      <li className={"list-item"}><Link href={"/docker-lab"} className={"text-blue-500 hover:underline"}>Introduction to Docker Lab</Link></li>
+      <li className={"list-item"}><Link href={"https://docs.google.com/presentation/d/1wgWFQVRioa_yEdMPcHc7uE4LjxJIr5y8aaT42DehEgM/edit?usp=sharing"} className={"text-blue-500 hover:underline"}>Introduction to Authentication Notes (Google Slides)</Link></li>
+    </ol>
+
   </>
 }
 

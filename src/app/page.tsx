@@ -24,11 +24,9 @@ export default function Home() {
           body={
             <>
               <p className='my-2 mt-4 underline text-lg'>Weekly Team Meetings</p>
-              <p>You should plan on attending <span className={"font-semibold italic"}>at least</span> one meeting per
-                week!</p>
+              <p>There will only be <span className={"font-semibold italic"}>ONE</span> meeting per week in addition to Sunday hacknight. Gabriel can hold additional OH time Thursday evenings if there is demand later this semester.</p>
               <ul className={"list-disc my-2"}>
-                <li className={"ml-6 list-item"}>Spring Meeting #1 TBD</li>
-                <li className={"ml-6 list-item"}>Spring Meeting #2 TBD</li>
+                <li className={"ml-6 list-item"}>Mondays Room and Time TBD</li>
               </ul>
               <p className='my-2 mt-4 underline text-lg'>Hack Night</p>
               <p className={"-mb-4"}>Sunday 7:00 - 8:00 PM: JCC 170</p>
